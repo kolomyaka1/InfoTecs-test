@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoTecs test task</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Блок с инпутами для скрытия/показа столбцов -->
+    <div class="inputs__block">
+        <span>Имя<input type="checkbox" class="columns-input" data-index="1" checked></span>
+        <span>Фамилия<input type="checkbox" class="columns-input" data-index="2" checked></span> 
+        <span>Описание<input type="checkbox" class="columns-input" data-index="3" checked></span>
+        <span>Цвет глаз<input type="checkbox" class="columns-input" data-index="4" checked></span>
+    </div>
+
+    <!-- Кнопки для переключения страниц -->
+    <div class='button__wrapper'>
+        <div class='button__block'>
+          <a href="#" onclick="prevPage()" id="btnPrev" class='button button__prev'>Prev</a>
+          <a href="#" onclick="nextPage()" id="btnNext" class='button button__next'>Next</a>
+        </div>
+        <span class='button__page'>page: <span id="page"></span></span>
+    </div>
+
+    <!-- Заголовки столбцов -->
+    <div class="table__block">
+        <table id='headersTable'>
+            <tr class="columns__name">
+                <th class="columns-firstName th col-1"><span>Имя</span></th>
+                <th class='columns-lastName col-2'><span>Фамилия</span></th>
+                <th class="columns-about col-3"><span>Описание</span></th>
+                <th class="columns-eyeColor col-4"><span>Цвет глаз</span></th>
+            </tr>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="overlay"></div>
+    <div class="modal">
+        <div class="modal__close-button">
+            <a href="#" >
+                <img id="closeButton" class="modal__close-button-img" src="close-icon.png" alt="">
+            </a>
+        </div>
+        <h3>Изменение строки</h3>
+        <div class="modal__block">
+        <p>Имя</p>
+        <input type="text" maxlength="10"  name='firstName' class="modal__input" id='0'>
+        <p>Фамилия</p>
+        <input type="text" maxlength="10"  name='lastName' class="modal__input" id='1'>
+        <p>Описание</p>
+        <input type="text"  name='about' class="modal__input" id='2'>
+        <p>Цвет глаз</p>
+        <input type="text" maxlength="9"  name='eyeColor' class="modal__input" id='3'>
+        </div>
+        <button type="submit" class="modal__button" id="submitButton">Сохранить</button>
+    </div>
+    
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
